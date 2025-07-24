@@ -259,14 +259,12 @@ preprocessor = Pipeline(steps=[
 	("selector", selector)
 ])
 # read the training data
-# dir_path = r"C:\Users\91830\Desktop\Fligt Sagemaker\Data\train.csv"
-# train = pd.read_csv(os.path.join(dir_path , "train.csv"))
-# X_train = train.drop(columns="price")
-# y_train = train.price.copy()
-
-train = pd.read_csv("train.csv")
+dir_path = r"C:\Users\91830\Desktop\Fligt Sagemaker\Data\train.csv"
+train = pd.read_csv(os.path.join(dir_path , "train.csv"))
 X_train = train.drop(columns="price")
 y_train = train.price.copy()
+
+
 
 # fit and save the preprocessor
 preprocessor.fit(X_train, y_train)
